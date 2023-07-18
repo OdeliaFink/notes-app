@@ -1,7 +1,7 @@
 import React from 'react';
 import { MdDeleteForever } from 'react-icons/md';
 
-const Note = () => {
+const Note = ({ text, date, id }) => {
   return (
     <>
       <div
@@ -26,9 +26,9 @@ const Note = () => {
             whiteSpace: 'pre-wrap  ',
           }}
         >
-          <span>first note</span>
+          <span>{text}</span>
           <div className="note-footer">
-            <small>13/1/2001</small>
+            <small>{date}</small>
             <MdDeleteForever size="1.3rem" />
           </div>
         </div>

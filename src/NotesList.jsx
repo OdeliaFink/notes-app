@@ -1,6 +1,7 @@
 import React from 'react';
 import Note from './Note';
 import styled from 'styled-components';
+import AddNote from './AddNote';
 
 const NotesListContainer = styled.div`
   display: grid;
@@ -8,15 +9,13 @@ const NotesListContainer = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 `;
 
-const NotesList = () => {
+const NotesList = ({ notes }) => {
   return (
-    <NotesListContainer
-    // style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 20 }}
-    >
-      <Note />
-      <Note />
-      <Note />
-      <Note />
+    <NotesListContainer>
+      {notes.map((note) => (
+        <Note id={note.id} text={note.text} date={note.date} />
+      ))}
+      <AddNote />
     </NotesListContainer>
   );
 };
