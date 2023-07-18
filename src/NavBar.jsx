@@ -13,7 +13,7 @@ display: flex;
 padding: 0.7rem;
 padding 1rem;
 justify-content: space-between;
-width: 50%;
+width: 30%;
 `;
 
 const Button = styled.button`
