@@ -15,7 +15,13 @@ code {
 textarea {
   border: none;
   resize: none;
-  background-color: #67d7cc;
+  width: 95%;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 1rem;
+
+  background-color: #769fb6;
+  padding-block: 1rem;
+  text-align: center;
 }
 
 textarea:focus {

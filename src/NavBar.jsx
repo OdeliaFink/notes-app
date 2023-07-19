@@ -21,12 +21,13 @@ const Button = styled.button`
   border-radius: 10%;
   text-decoration: none;
   border: none;
-  background-color: orange;
+  background-color: #769fb6;
   transition: background-color 1s;
 
   &:hover {
     background-color: white;
     cursor: pointer;
+    border: 1px solid black;
   }
 
   &:focus,
@@ -50,9 +51,6 @@ const NavBar = () => {
           </div>
           <div>
             <Button>login</Button>
-          </div>
-          <div>
-            <Button>+ add note</Button>
           </div>
         </RightTabsContainer>
       </Container>

@@ -3,20 +3,28 @@ import styled from 'styled-components';
 import './index.css';
 
 const NoteNew = styled.div`
-  background-color: yellow;
+  background-color: #188fa7;
+  padding: 1rem;
+  border-radius: 1rem;
 `;
 
 const NoteFooter = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-block: 0.3rem;
 `;
 
 const Save = styled.button`
   background-color: #e1e1e1;
   border: none;
-  padding: 0.8rem 1.3rem;
+  padding: 1rem;
   border-radius: 15px;
+
+  &:hover {
+    background-color: #9dbbae;
+    cursor: pointer;
+  }
 `;
 
 const AddNote = ({ handleAddNote }) => {
@@ -29,8 +37,15 @@ const AddNote = ({ handleAddNote }) => {
     }
   };
 
-  const handleSaveClick = () => {
+  const handleSaveClick = (e) => {
     if (noteText.trim().length > 0) {
+      handleAddNote(noteText);
+      setNoteText('');
+    }
+  };
+
+  const handleEnterPress = (e) => {
+    if (e.key === 'Enter') {
       handleAddNote(noteText);
       setNoteText('');
     }
@@ -47,7 +62,7 @@ const AddNote = ({ handleAddNote }) => {
       />
       <NoteFooter>
         <small>{characterLimit - noteText.length} Remaining</small>
-        <Save className="save" onClick={handleSaveClick}>
+        <Save onClick={handleSaveClick} onKeyPres={handleEnterPress}>
           Save
         </Save>
       </NoteFooter>
