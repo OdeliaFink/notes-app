@@ -47,6 +47,7 @@ const AddNote = ({ handleAddNote }) => {
   const handleEnterPress = (e) => {
     if (e.key === 'Enter') {
       handleAddNote(noteText);
+      e.preventDefault();
       setNoteText('');
     }
   };
@@ -59,12 +60,11 @@ const AddNote = ({ handleAddNote }) => {
         placeholder="Type to add a note..."
         value={noteText}
         onChange={handleChange}
+        onKeyPress={handleEnterPress}
       />
       <NoteFooter>
         <small>{characterLimit - noteText.length} Remaining</small>
-        <Save onClick={handleSaveClick} onKeyPres={handleEnterPress}>
-          Save
-        </Save>
+        <Save onClick={handleSaveClick}>Save</Save>
       </NoteFooter>
     </NoteNew>
   );
