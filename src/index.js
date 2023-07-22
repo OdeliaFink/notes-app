@@ -1,19 +1,27 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Card from 'react-bootstrap/Card';
 import { Provider } from 'react-redux';
-import store from './store';
-import './index.css';
-import App from './App';
+import { createStore } from 'redux';
 
-import { BrowserRouter } from 'react-router-dom';
+import reducer from './reducer';
 
-const container = document.getElementById('root');
-const root = createRoot(container);
+import LoginForm from './LoginForm';
 
-root.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </Provider>
-);
+const store = createStore(reducer);
+
+function App() {
+  return (
+    <Provider store={store}>
+      <div className="App">
+        <Card body>
+          <LoginForm />
+        </Card>
+      </div>
+    </Provider>
+  );
+}
+
+const rootElement = document.getElementById('root');
+ReactDOM.render(<App />, rootElement);
