@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginRequest } from './redux/actions';
+// import { loginRequest } from './redux/actions';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ const LoginForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(loginRequest(username, password));
+    // dispatch(loginRequest(username, password));
   };
 
   return (
