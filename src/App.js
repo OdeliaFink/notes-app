@@ -7,6 +7,7 @@ import NotesList from './NotesList';
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import AddNote from './AddNote';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Container = styled.div`
   max-width: 960px;
