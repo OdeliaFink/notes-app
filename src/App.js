@@ -1,5 +1,5 @@
 import './App.css';
-import LoginForm from './LoginForm';
+// import LoginForm from './LoginForm';
 import NavBar from './NavBar';
 import { nanoid } from 'nanoid';
 import Note from './Note';
@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import AddNote from './AddNote';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Register from './Register';
 
 const Container = styled.div`
   max-width: 960px;
@@ -65,12 +66,13 @@ function App() {
 
   return (
     <Container>
-      <NavBar />
+      {/* <NavBar />
       <NotesList
         notes={notes}
         handleAddNote={addNote}
         handleDeleteNote={deleteNote}
-      />
+      /> */}
+      <Register />
     </Container>
   );
 }
